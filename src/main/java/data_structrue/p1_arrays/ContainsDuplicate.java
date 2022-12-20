@@ -14,6 +14,7 @@ public class ContainsDuplicate {
         nums[2] = 3;
         nums[3] = 4;
         nums[4] = 4;
+        //
         System.out.println(containsDuplicate(nums));
     }
     public static boolean containsDuplicate(int[] nums) {
