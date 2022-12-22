@@ -16,7 +16,10 @@ public class ContainsDuplicate {
         nums[4] = 4;
         //
         System.out.println(containsDuplicate(nums));
+        System.out.println(containsDuplicate2(nums));
     }
+
+    //使用set集合无重复元素的特点
     public static boolean containsDuplicate(int[] nums) {
         HashSet set = new HashSet();
         for (int num:nums
@@ -29,5 +32,16 @@ public class ContainsDuplicate {
             return false;
         }
         return true;
+    }
+
+    //使用排序
+    public static boolean containsDuplicate2(int[] nums){
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if(nums[i] == nums[i+1]){
+                return true;
+            }
+        }
+        return false;
     }
 }
