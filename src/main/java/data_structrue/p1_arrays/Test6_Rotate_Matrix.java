@@ -9,22 +9,28 @@ package data_structrue.p1_arrays;
 public class Test6_Rotate_Matrix {
     public static void main(String[] args) {
         int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
-        int[][] rmatrix = rotateMatrix(matrix);
-        for (int i = 0; i < rmatrix.length; i++) {
-            for (int j = 0; j < rmatrix[i].length; j++) {
-                System.out.print(rmatrix[i][j]);
-                System.out.println();
+        int[][] rmat = rotateMatrix(matrix);
+        for (int i = 0; i < rmat.length; i++) {
+            for (int j = 0; j < rmat[i].length; j++) {
+                System.out.print(rmat[i][j]);
             }
+            System.out.println();
         }
     }
 
     public static int[][] rotateMatrix(int[][] matrix){
         int tmp;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < ; j++) {
-                
+        int n = matrix.length;
+        for (int i = 0; i < n/2; i++) {
+            for (int j = i; j < n - 1 -i; j++) {
+                tmp = matrix[i][j];
+                matrix[i][j] = matrix[n-j-1][i];
+                matrix[n-j-1][i] = matrix[n-i-1][n-j-1];
+                matrix[n-i-1][n-j-1] = matrix[j][n-i-1];
+                matrix[j][n-i-1] = tmp;
             }
         }
+        return matrix;
 
     }
 }
