@@ -33,6 +33,7 @@ public class Test8_Matrix_Diagonal_Ergodic_standard {
     static int[] nums;
     static int index = 0;
         public static int[] findDiagonalOrder(int[][] mat) {
+            index = 0;
             nums = new int[mat.length * mat[0].length];
             if(nums.length == 0){
                 return new int[0];
