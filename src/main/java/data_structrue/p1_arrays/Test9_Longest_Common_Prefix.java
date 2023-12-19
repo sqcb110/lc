@@ -12,32 +12,39 @@ package data_structrue.p1_arrays;
 public class Test9_Longest_Common_Prefix {
     public static void main(String[] args) {
         String[] strs = {"flower","flow","flight"};
+        System.out.println("str:" + longestCommonPrefix(strs));
+
+        String[] strs2 = {"flink","france","flight"};
+        System.out.println("str2:" + longestCommonPrefix(strs2));
+
+        String[] strs1 = {"abc","def","ghi"};
+        System.out.println("str1:" + longestCommonPrefix(strs1));
 
     }
-    public String longestCommonPrefix(String[] strs) {
+    public static String longestCommonPrefix(String[] strs) {
         StringBuilder sb = new StringBuilder();
 
         int i = 0;
-        while (true) {
-            char cmpChar = '0';
-            for (String s :
-                    strs) {
-                if (i == s.length()) {
+
+        char cha;
+        while(true){
+            if(strs[0].length() == i){
+                return sb.toString();
+            }else{
+                cha = strs[0].charAt(i);
+            }
+
+            for (String s:strs) {
+
+                if (i==s.length()){
                     return sb.toString();
                 }
 
-                char c = s.charAt(i);
-                if (cmpChar == '0') {
-                    cmpChar = c;
-                    continue;
-                }
-
-                if (cmpChar != c) {
+                if(cha != s.charAt(i)){
                     return sb.toString();
                 }
             }
-
-            sb.append(cmpChar);
+            sb.append(cha);
             i++;
         }
     }
