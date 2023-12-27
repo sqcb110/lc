@@ -12,7 +12,11 @@ public class Test10_Longest_Palindrome {
     }
 
     public static String longestPalindrome(String str){
-
+        //整型数组记录开始、结尾、长度
+        int[] pal = new int[3];
+        for (int i = 1; i < pal.length - 1; i++) {
+            
+        }
 
         return null;
     }
