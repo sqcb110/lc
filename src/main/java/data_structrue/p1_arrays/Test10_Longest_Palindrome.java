@@ -11,12 +11,15 @@ public class Test10_Longest_Palindrome {
         String s = "babad";
         String subs = longestPalindrome(s);
         System.out.println(subs);
+        String s1 = "caba";
+        String subs1 = longestPalindrome(s1);
+        System.out.println(subs1);
     }
 
     public static String longestPalindrome(String str){
         //整型数组记录开始、结尾、长度
         int[] pal = {0,0,0};
-        for (int i = 1; i < pal.length - 1; i++) {
+        for (int i = 0; i < pal.length - 1; i++) {
             boolean dan = true;
             boolean shuang = true;
             int bigin_dan = i;
@@ -27,10 +30,12 @@ public class Test10_Longest_Palindrome {
             while(dan){
                 bigin_dan -= 1;
                 end_dan += 1;
-                if(bigin_dan >=0 && end_dan <= str.length() - 1  && str.charAt(bigin_dan)==str.charAt(end_dan) && end_dan + 1 - bigin_dan > pal[2]){
-                    pal[0] = bigin_dan;
-                    pal[1] = end_dan;
-                    pal[2] = end_dan + 1 -bigin_dan;
+                if(bigin_dan >=0 && end_dan <= str.length() - 1  && str.charAt(bigin_dan)==str.charAt(end_dan)){
+                    if(end_dan + 1 - bigin_dan > pal[2]){
+                        pal[0] = bigin_dan;
+                        pal[1] = end_dan;
+                        pal[2] = end_dan + 1 -bigin_dan;
+                    }
                 }else{
                     dan = false;
                 }
@@ -39,10 +44,12 @@ public class Test10_Longest_Palindrome {
             while(shuang){
                 bigin_shuang -= 1;
                 end_shuang += 1;
-                if(bigin_shuang >=0 && end_shuang <= str.length() - 1  && str.charAt(bigin_shuang)==str.charAt(end_shuang) && end_dan + 1 - bigin_dan > pal[2]){
-                    pal[0] = bigin_shuang;
-                    pal[1] = end_shuang;
-                    pal[2] = end_shuang + 1 -bigin_shuang;
+                if(bigin_shuang >=0 && end_shuang <= str.length() - 1  && str.charAt(bigin_shuang)==str.charAt(end_shuang)){
+                    if(end_shuang + 1 - bigin_shuang > pal[2]){
+                        pal[0] = bigin_shuang;
+                        pal[1] = end_shuang;
+                        pal[2] = end_shuang + 1 -bigin_shuang;
+                    }
                 }else{
                     shuang = false;
                 }
