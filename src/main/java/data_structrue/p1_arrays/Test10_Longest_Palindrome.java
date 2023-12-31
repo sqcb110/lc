@@ -19,7 +19,7 @@ public class Test10_Longest_Palindrome {
     public static String longestPalindrome(String str){
         //整型数组记录开始、结尾、长度
         int[] pal = {0,0,0};
-        for (int i = 0; i < pal.length - 1; i++) {
+        for (int i = 0; i < str.length() - 1; i++) {
             boolean dan = true;
             boolean shuang = true;
             int bigin_dan = i;
