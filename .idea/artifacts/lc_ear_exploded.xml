@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="lc:ear exploded">
+    <output-path>/D:/develop/IdeaProjects/lc/out/artifacts/lc_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="lc/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>
